@@ -1,0 +1,10 @@
+***Netcat essential command for bash to read from and write to network connections using TCP or UDP protocols***
+
+nc -lp [port number] (To listen in specified port)
+nc [ip address of listening host] [port number of listening host] (Establish a raw data connection with listening host)
+nc -lp [port number] (To listen in specified port) > [file name with extension] (Write listening raw data to the specified file instead standard out)
+nc [ip address of listening host] [port number of listening host] < [file name with extension] -w[seconds] (Read raw data from the specified file instead standard input and send to the listening port of specified host. Terminate the connection while more than specified seconds hit)
+
+nc -v [server ip address] [port number] (Create connection with another host as a client for services)
+GET index.html HTTP/1.1 (Example of http command to make a get request for index.html file after establish a connection)
+
