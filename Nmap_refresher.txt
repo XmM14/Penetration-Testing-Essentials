@@ -1,0 +1,16 @@
+***Nmap essential commands for bash to scan a netork***
+
+nmap -sn [target network's addres] / [subnet] (Scan a specific Subnet)
+nmap -PS [target hosts' ip address] (Scan all tcp ports of the host by tcp syn ping)
+sudo nmap -sU [target hosts' ip address] (Scan all UDP ports)
+sudo nmap -sU -P0 [target hosts' ip address] (Scan all UDP ports skipping host service)
+nmap -sV [target hosts' ip address] (Scan with identifying version of services)
+nmap -sV -p[port number] [target hosts' ip address] (Scan with version of services of specific port)
+sudo nmap -sSUV -p U:[specific udp ports separate with commas'],T[specific TCP ports separte with commas'] [target hosts' ip address] (Scan both specified tcp and udp ports]
+nmap -PS -O [target hosts' ip address] (Identifying the target hosts' OS)
+
+cd usr/share/nmap/scripts (Changing to this directory which has scripts for nmap)
+ls usr/share/nmap/scripts (list all scripts for nmap)
+
+nmap -p[port number] --script==[script name] [target hosts' ip address]
+
