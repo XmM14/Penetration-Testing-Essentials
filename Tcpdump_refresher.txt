@@ -1,0 +1,27 @@
+***Tcpdump essential command for bash to capture and analyze network traffic on a network interface***
+
+tcpdump -D or --list-interfaces (Print the list of the network interfaces available on the system and on which tcpdump can capture packets)
+tcpdump -i or --interface=[interface] (Listen on specified interface)
+tcpdump -c [counter number] -i[interface] (Listen given number of count packets and then exit)
+tcpdump -c [counter number] -i[interface] -n (Suppress host and port resolution)
+tcpdump -c [counter number] -i[interface] -N (Suppress domain name qualification of host names)
+tcpdump -c [counter number] -i[interface] -s[bytes] (Specify the bytes of packets received)
+tcpdump -c [counter number] -i[interface] -s[bytes] -X (Print the data of each packet (minus its link level header) in hex and ASCII)
+tcpdump -c [counter number] -i[interface] -s0 -X (Print full data of each packet (minus its link level header) in hex and ASCII)
+tcpdump -c [counter number] host [ip address] (Capture traffic to and from specified host)
+tcpdump -c [counter number] udp (Capture udp packets of the network)
+tcpdump -c [counter number] net [subnet with network bits] (Captures packets to and from a subnet)
+tcpdump -c [counter number] port [port number] (Capture packets of specified listening port)
+tcpdump -c [counter number] portrange[starting port - End port] (Captures packets within the specified port range)
+tcpdump -c [counter number] dst portrange [starting port - End port] (Captures packets where destination port is within the specified range)
+tcpdump -c [counter number] src portrange [starting port - End port] (Captures packets where source port is within the specified range)
+tcpdump -c [counter number] ip6 [filename with .cap or .pcap extention] (Captures all ip6 traffic on the network)
+tcpdump -c [counter number] 'src [source ip address] and (dst port [port number] or [port number])' (Captures packet from specified source to specified ports)
+tcpdump -c [counter number] 'tcp[byte number]=[equivalent value of expected string in ASCII or decimal]' (Captures TCP packets filtered with the specified ASCII String or value of the string)
+tcpdump -c [counter number] 'tcp[13] & 2!=0' (Captures TCP packets where tcp flag is set to syn and possibly along with other flags)
+tcpdump -c [counter number] 'tcp[tcpflags]=tcp-syn' (Captures TCP packets where tcp flag is set only to syn)
+tcpdump -c [counter number] 'tcp[32:4]=0X47455420' (Captures TCP packets where the payload at the specified position contains the "GET " string, typical for HTTP GET requests)
+tcpdump -c [counter number] 'tcp[(tcp[12]>>2):4]=0X5353482D' (Captures TCP packets where the TCP payload contains the ASCII string "SSH-")
+tcpdump -c [counter number] 'tcp[13]=6' (Captures TCP packets where both the ACK and RST flags are set in the TCP header)
+
+
